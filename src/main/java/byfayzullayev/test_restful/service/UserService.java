@@ -31,9 +31,7 @@ public class UserService implements BaseService {
         this.objectMapper = objectMapper;
     }
 
-    public ApiResponse addUser(
-            SingUpReceiveModel singUpReceiveModel
-    ) {
+    public ApiResponse addUser(SingUpReceiveModel singUpReceiveModel) {
         Optional<UserEntity> optionalUserEntity =
                 userRepository.findByUsername(singUpReceiveModel.getUsername());
         if (optionalUserEntity.isPresent())
